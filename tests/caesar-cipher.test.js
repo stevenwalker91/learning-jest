@@ -20,6 +20,10 @@ test('hello 123 should become ifmmp 123', () => {
   expect(caesarCipher('hello 123')).toBe('ifmmp 123');
 })
 
+test('correct case is retained', () => {
+  expect(caesarCipher('lowercase')).toMatch(/[a-z]/);
+  expect(caesarCipher('UPPERCASE')).toMatch(/[A-Z]/);
+  expect(caesarCipher('MIXEDcase')).toMatch(/[a-zA-Z]/);
+  expect(caesarCipher('MIXEDcase')).toBe('NJYFEdbtf')
+})
 
-
-// A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
